@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101514">
+  <meta name="description" content="Your next deployment starts here. Jump into War Thunder or Enlisted for free using the links below.">
+  <meta property="og:title" content="SNAIL NEED YOU! | Ready to deploy?">
+  <meta property="og:description" content="Two battlefields. Your choice. Play War Thunder or Enlisted free.">
+  <meta property="og:type" content="website">
+  <title>SNAIL NEED YOU! — Choose Your Battlefield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0f1414; --panel:#1b2220; --gold:#f4b647; --gold-pale:#ffe3a0; --cream:#f2f0e9; --muted:#a6aca8; --line:rgba(255,255,255,.14); }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--cream);background:var(--bg);font:500 16px/1.5 'Barlow',Arial,sans-serif;min-width:320px;-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.13;background-image:repeating-linear-gradient(0deg,transparent 0px,transparent 3px,rgba(255,255,255,.055) 4px,transparent 5px);mix-blend-mode:screen}
+    a{text-decoration:none;color:inherit}
+    a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+    .layout{width:min(1120px,calc(100% - 44px));margin:0 auto}
+    .masthead{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:13px}
+    .mark{width:41px;height:41px;display:grid;place-items:center;color:#0f1414;background:var(--gold);clip-path:polygon(0 0,100% 0,100% 72%,73% 100%,0 100%);font:900 25px/1 'Barlow Condensed',Impact,sans-serif;letter-spacing:-.02em}
+    .brand-name{font:800 18px/.9 'Barlow Condensed',Impact,sans-serif;letter-spacing:.11em}
+    .brand-sub{display:block;margin-top:7px;color:#88908b;font:700 10px/1 'Barlow',sans-serif;letter-spacing:.21em}
+    .masthead-right{display:flex;align-items:center;gap:11px;color:#b0b7b2;font:700 10px/1 'Barlow',sans-serif;letter-spacing:.19em}
+    .live-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(244,182,71,.12)}
+    .intro{padding:33px 0 31px;display:flex;justify-content:space-between;align-items:end;gap:30px}
+    .intro h1{font:800 clamp(25px,3.8vw,35px)/.95 'Barlow Condensed',Impact,sans-serif;letter-spacing:.065em;margin:0}
+    .intro .lead{font-size:12px;line-height:1.4;color:#a2a9a4;letter-spacing:.07em;margin-top:9px}
+    .intro .intel{color:#7d8781;font:700 10px/1.4 'Barlow',sans-serif;letter-spacing:.19em;text-align:right}
+    .intel b{color:var(--gold);font-weight:800}
+    .stage{display:grid;gap:17px}
+    .game{position:relative;isolation:isolate;overflow:hidden;background:#263028;border:1px solid rgba(255,255,255,.13);box-shadow:0 12px 45px rgba(0,0,0,.21)}
+    .game:before{content:"";position:absolute;inset:0;z-index:-2;background-repeat:no-repeat;background-size:cover;transition:transform .7s ease, filter .7s ease}
+    .game:hover:before{transform:scale(1.035)}
+    .game:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(12,17,17,.95) 0%,rgba(12,17,17,.85) 30%,rgba(12,17,17,.2) 75%,rgba(12,17,17,.06) 100%),linear-gradient(0deg,rgba(8,12,12,.48),transparent 60%)}
+    .wt{min-height:433px}
+    .wt:before{background-image:url('https://staticfiles.warthunder.com/upload/image/%212025/10/db/fokker_d23/940_recruit_pack_france_3c44dd33e4f252309d19c0707ba1df97.jpg'),linear-gradient(125deg,#3b4944 15%,#ad8953 65%,#3c2922);background-position:center 48%}
+    .enlisted{min-height:288px}
+    .enlisted:before{background-image:url('https://static.enlisted.net/upload/image/2025/11/1100action_screen_45c37f595f58a0936e9544b43be95fd8.jpg'),linear-gradient(120deg,#303a34,#9a8068);background-position:center 48%}
+    .game-content{padding:32px 42px 32px;min-height:inherit;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative}
+    .tagline{display:flex;align-items:center;gap:10px;color:#d9d4c6;font:800 11px/1 'Barlow',sans-serif;letter-spacing:.21em}
+    .tagline:before{content:"";display:block;width:22px;height:2px;background:var(--gold)}
+    .game h2{margin:20px 0 9px;font:900 clamp(55px,8.2vw,103px)/.78 'Barlow Condensed',Impact,'Arial Narrow',sans-serif;letter-spacing:-.013em;text-shadow:0 4px 20px rgba(0,0,0,.24)}
+    .game h2 span{display:block}
+    .wt h2 span:last-child{color:var(--gold-pale)}
+    .game-description{font-size:14px;color:#d0d3cb;max-width:365px;margin:14px 0 24px;line-height:1.55}
+    .play{min-width:239px;padding:16px 22px;display:inline-flex;gap:22px;align-items:center;justify-content:space-between;border:1px solid var(--gold);background:var(--gold);font:900 15px/1 'Barlow Condensed',Impact,sans-serif;color:#111715;letter-spacing:.13em;clip-path:polygon(0 0,100% 0,100% 76%,calc(100% - 13px) 100%,0 100%);transition:background .2s, transform .2s, box-shadow .2s}
+    .play:hover{transform:translateY(-2px);background:#ffce71;box-shadow:0 10px 24px rgba(244,182,71,.18)}
+    .arrow{font:900 21px/12px 'Barlow',sans-serif}
+    .game-index{position:absolute;top:22px;right:24px;display:flex;align-items:center;gap:7px;font:800 10px/1 'Barlow',sans-serif;letter-spacing:.17em;color:rgba(255,255,255,.85);background:rgba(8,11,10,.4);border:1px solid rgba(255,255,255,.18);padding:10px 13px;backdrop-filter:blur(7px)}
+    .game-index strong{color:var(--gold)}
+    .enlisted .game-content{padding-top:30px;padding-bottom:28px}
+    .enlisted h2{font-size:clamp(51px,6.2vw,77px);margin-top:17px;margin-bottom:8px}
+    .enlisted .game-description{margin:6px 0 16px}
+    .enlisted .play{background:transparent;border:1px solid rgba(244,182,71,.8);color:var(--gold-pale);padding:13px 18px;min-width:222px}
+    .enlisted .play:hover{background:var(--gold);color:#111715}
+    .bar{margin-top:23px;display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);color:#bfc4bb}
+    .bar-item{display:flex;align-items:center;justify-content:center;gap:9px;padding:19px 12px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.13em}
+    .bar-item + .bar-item{border-left:1px solid var(--line)}
+    .bar-item svg{flex:none;color:var(--gold)}
+    footer{padding:27px 0 40px;display:flex;justify-content:space-between;gap:20px;font-size:11px;color:#777f7b;line-height:1.55}
+    footer p{margin:0;max-width:640px}
+    footer .sig{letter-spacing:.14em;text-align:right;white-space:nowrap;color:#949b96}
+    @media (max-width:700px){
+      .layout{width:min(100% - 28px,500px)}
+      .masthead{height:66px}
+      .brand-name{font-size:16px}.brand-sub{font-size:9px}
+      .masthead-right{font-size:9px;letter-spacing:.09em}
+      .intro{padding:25px 0 24px;align-items:start}
+      .intro h1{font-size:29px}
+      .intro .intel{display:none}
+      .wt{min-height:467px}.enlisted{min-height:323px}
+      .wt:before{background-position:62% center}.enlisted:before{background-position:63% center}
+      .game:after{background:linear-gradient(0deg,rgba(12,17,17,.97) 0%,rgba(12,17,17,.77) 35%,rgba(12,17,17,.12) 100%)}
+      .game-content{padding:30px 23px 29px;justify-content:flex-end}
+      .game h2{font-size:clamp(62px,13vw,92px)}
+      .game-description{font-size:13px;margin:13px 0 21px}
+      .enlisted h2{font-size:clamp(59px,12vw,79px)}
+      .enlisted .game-description{margin:7px 0 16px}
+      .game-index{top:16px;right:15px;font-size:9px}
+      .bar{grid-template-columns:1fr}
+      .bar-item{padding:12px 8px;justify-content:flex-start}
+      .bar-item + .bar-item{border-left:none;border-top:1px solid var(--line)}
+      footer{padding:23px 0 30px;flex-direction:column;gap:13px}
+      footer .sig{text-align:left}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.game:before,.play{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <header class="masthead">
+      <div class="brand" aria-label="Snail Need You">
+        <span class="mark" aria-hidden="true">S</span>
+        <div><div class="brand-name">SNAIL NEED YOU!</div><span class="brand-sub">BATTLEFIELD RECRUITMENT</span></div>
+      </div>
+      <div class="masthead-right"><span class="live-dot" aria-hidden="true"></span> READY TO DEPLOY</div>
+    </header>
+    <main>
+      <div class="intro">
+        <div><h1>CHOOSE YOUR BATTLEFIELD.</h1><div class="lead">Two free-to-play war games. One mission: get in the action.</div></div>
+        <div class="intel">MISSION STATUS<br><b>OPEN FOR RECRUITS</b></div>
+      </div>
+      <section class="stage" aria-label="Choose a game">
+        <article class="game wt">
+          <div class="game-index"><strong>01</strong> / FIRST DEPLOYMENT</div>
+          <div class="game-content">
+            <div class="tagline">THE MAIN EVENT · FREE TO PLAY</div>
+            <h2><span>WAR</span><span>THUNDER</span></h2>
+            <p class="game-description">Tanks. Jets. Warships. Massive battles await. Not playing yet? This is your sign.</p>
+            <a class="play" href="https://price-low.eu/a/68AjpiGwZZu5VMD" target="_blank" rel="noopener noreferrer sponsored" aria-label="Play War Thunder using a referral link">PLAY WAR THUNDER <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="game enlisted">
+          <div class="game-index"><strong>02</strong> / SECOND DEPLOYMENT</div>
+          <div class="game-content">
+            <div class="tagline">WORLD WAR II · FREE TO PLAY</div>
+            <h2>ENLISTED</h2>
+            <p class="game-description">Lead your squad into large-scale WWII battles.</p>
+            <a class="play" href="https://price-low.eu/a/R6V7vUgZyotO6Qo" target="_blank" rel="noopener noreferrer sponsored" aria-label="Play Enlisted using a referral link">PLAY ENLISTED <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </section>
+      <div class="bar" aria-label="Highlights">
+        <div class="bar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> FREE TO PLAY</div>
+        <div class="bar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> CHOOSE YOUR GAME</div>
+        <div class="bar-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m13 2-3 8h7l-6 12 1-9H5z"/></svg> GET INTO ACTION</div>
+      </div>
+    </main>
+    <footer>
+      <p>Some links are referral links. This is an independent promotional page, not an official War Thunder, Enlisted or Gaijin website. Game images and names belong to their respective owners.</p>
+      <div class="sig">SNAIL NEED YOU! · 2026</div>
+    </footer>
+  </div>
+</body>
+</html>
